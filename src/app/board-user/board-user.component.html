@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="table-container">
+    <!-- Search Box -->
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="بحث ..."
+        [(ngModel)]="searchTerm"
+        class="search-input"
+      />
+    </div>
+
+    <table class="data-table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>الاسم</th>
+        <th>اللقب</th>
+        <th>البريد</th>
+        <th>رقم الهاتف</th>
+        <th>الإجراءات</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of filteredUsers(); let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td class="action-buttons">
+          <button class="btn-edit" (click)="editUser(user)">تصحيح</button>
+          <button class="btn-delete" (click)="deleteUser(user)">حذف</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

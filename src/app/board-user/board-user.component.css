@@ -1,0 +1,133 @@
+/* Container for the table with centered layout */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #ffffff;
+  direction: rtl; /* Right-to-left layout for the entire container */
+}
+
+/* Styling for the search input */
+.search-box {
+  margin-bottom: 20px;
+  text-align: left; /* Text align left since the input needs to be aligned opposite to the RTL flow */
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #8C1950; /* Deep purple from the logo */
+  border-radius: 5px;
+  width: 250px;
+  outline: none;
+  transition: border 0.3s ease;
+  text-align: right; /* Ensure input text is right-aligned for Arabic text */
+}
+
+.search-input:focus {
+  border-color: #7A182B; /* Dark red from the logo */
+}
+
+/* Table styling */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  text-align: right; /* Right-align table text */
+  border-spacing: 0;
+  direction: rtl; /* RTL for the table */
+}
+
+/* Table header styling */
+.data-table th {
+  padding: 15px;
+  background-color: #7A182B; /* Dark red from the logo */
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right; /* Right-align header text */
+}
+
+/* Table row and cell styling */
+.data-table td {
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: right; /* Right-align table cells */
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Styling for action buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start; /* Adjust the buttons to align properly in RTL */
+}
+
+.action-buttons .btn-edit,
+.action-buttons .btn-delete {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #4C9C4A; /* Green from the logo */
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #3b7e39; /* Darker shade of green */
+}
+
+.btn-delete {
+  background-color: #7A182B; /* Dark red from the logo */
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #601424; /* Darker red for hover */
+}
+
+/* Additional styling for better table layout */
+.data-table th, .data-table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  .data-table {
+    font-size: 14px;
+  }
+
+  .search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn-edit,
+  .action-buttons .btn-delete {
+    width: 100%;
+  }
+}

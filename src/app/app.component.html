@@ -1,0 +1,48 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar brand (logo/name) on the right side for RTL -->
+    <a href="#" class="navbar-brand">منظمة الوعي</a> <!-- Adjust this to your brand name in Arabic -->
+
+    <!-- Navigation links -->
+    <ul class="navbar-nav ml-auto" routerLinkActive="active">
+
+      <!-- Admin Board Link (visible for admins only) -->
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">لوحة الادارة</a> <!-- Admin Board in Arabic -->
+      </li>
+
+      <!-- Moderator Board Link (visible for moderators only) -->
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/mod" class="nav-link" routerLink="mod">لوحة المشرف</a> <!-- Moderator Board in Arabic -->
+      </li>
+
+      <!-- User Link (visible when logged in) -->
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a href="/user" class="nav-link" routerLink="user">الأيتام</a> <!-- User in Arabic -->
+      </li>
+    </ul>
+
+    <!-- Right-side login/logout links -->
+    <ul class="navbar-nav mr-auto">
+      <!-- If not logged in, show Sign Up and Login links -->
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a href="/register" class="nav-link" routerLink="register">التسجيل</a> <!-- Sign Up in Arabic -->
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a href="/login" class="nav-link" routerLink="login">تسجيل الدخول</a> <!-- Login in Arabic -->
+      </li>
+
+      <!-- If logged in, show Profile and Logout links -->
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a> <!-- Display username -->
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a href="#" class="nav-link logout" (click)="logout()">تسجيل الخروج</a> <!-- Logout in Arabic -->
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+/* Logo styling inside the navbar */
+.navbar-logo {
+  height: 40px; /* Adjust the height of the logo */
+  width: auto;
+  margin-right: 10px; /* Add spacing between the logo and the next item */
+}
+
+/* Navbar container for right-to-left */
+.navbar {
+  background-color: #7A182B; /* Dark Red from logo */
+  padding: 10px 20px;
+  direction: rtl; /* Right-to-left layout for Arabic */
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: right; /* Align text to the right for RTL */
+}
+
+/* Hover and active states for links */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: #4C9C4A; /* Green from logo */
+  color: white;
+  border-radius: 5px;
+}
+
+/* Logout button */
+.navbar-nav .nav-link.logout:hover {
+  background-color: #8C1950; /* Deep purple for hover */
+  border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+}
